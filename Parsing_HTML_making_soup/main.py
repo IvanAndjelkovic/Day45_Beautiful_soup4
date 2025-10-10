@@ -1,14 +1,20 @@
 from bs4 import BeautifulSoup
+import requests
+
+response = requests.get("https://news.ycombinator.com/news")
+print(response.text)
 
 
 
-with open("/workspaces/Day45_Beautiful_soup4/Parsing_HTML_making_soup/website.html", "r", encoding="utf-8") as f:
-    content = f.read()
 
-soup = BeautifulSoup(content, "html.parser")
+
+# with open("/workspaces/Day45_Beautiful_soup4/Parsing_HTML_making_soup/website.html", "r", encoding="utf-8") as f:
+#     content = f.read()
+
+# soup = BeautifulSoup(content, "html.parser")
 # print(soup.prettify()  )
 
-all_anchor_tags = soup.find_all(name = "a" )
+# all_anchor_tags = soup.find_all(name = "a" )
 
 # for tag in all_anchor_tags:
 #     # text = tag.getText()
@@ -25,9 +31,9 @@ all_anchor_tags = soup.find_all(name = "a" )
 # print(company_url)
 
 # select ID 
-name = soup.select_one(selector = "#name")
-print(name)
+# name = soup.select_one(selector = "#name")
+# print(name)
 
-heading = soup.select(selector =".heading")
-print(heading)
+# heading = soup.select(selector =".heading")
+# print(heading)
 
